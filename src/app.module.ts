@@ -7,6 +7,7 @@ import { TasksModule } from './tasks/infrastructure/tasks.module';
 import { AuthModule } from './auth/infrastructure/auth.module';
 import { UserOrmEntity } from './users/infrastructure/orm/User.orm-entity';
 import { TaskOrmEntity } from './tasks/infrastructure/orm/Task.orm-entity';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -32,7 +33,7 @@ import { TaskOrmEntity } from './tasks/infrastructure/orm/Task.orm-entity';
     TasksModule,
     AuthModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [
     {
       provide: APP_PIPE,

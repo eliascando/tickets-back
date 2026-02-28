@@ -126,7 +126,15 @@ Authorization: Bearer <TU_ACCESS_TOKEN>
 
 ---
 
-## 1. Módulo de Usuarios
+## 1. Integración General y Salud
+
+### `GET /health` — Health Check
+Este endpoint **NO** requiere autenticación. Su propósito es para asegurar que el backend está corriendo.
+- **Respuesta (200):** `{"status": "ok", "timestamp": "..."}`
+
+---
+
+## 2. Módulo de Usuarios
 
 ### `GET /users` — Listar Usuarios
 Devuelve el listado de todos los empleados/usuarios del sistema.
@@ -148,7 +156,7 @@ Detalles específicos de un empleado.
 
 ---
 
-## 2. Módulo de Tareas (Tickets)
+## 3. Módulo de Tareas (Tickets)
 
 ### `GET /tasks` — Tablero de Tickets
 Muestra todas las tareas. Soporta filtrado por estado en la URL.
@@ -174,7 +182,7 @@ Oculta un ticket de la base de datos (Soft Delete). Devuelve status 204.
 
 ---
 
-## 3. Acciones de Flujo (PATCH)
+## 4. Acciones de Flujo (PATCH)
 
 Estas rutar son accesos directos de negocio, no envían Body. 
 El backend determina qué usuario hizo la petición basándose en el JWT.
