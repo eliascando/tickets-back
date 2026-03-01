@@ -51,6 +51,13 @@ El backend está construido bajo el paradigma de la **Clean Architecture** (Arqu
    ```
    *Nota:* TypeORM está configurado con `synchronize: true` en desarrollo, por lo que creará las tablas automáticamente. Al levantar el servidor también se ejecutará un *seeder* que creará el usuario administrador por defecto si no existe.
 
+4. **Estructura de Base de Datos Manual (Opcional):**
+   Si no deseas usar la sincronización automática de TypeORM o necesitas montar la estructura para un entorno que no sea desarrollo, dispones del archivo `db.sql` en la carpeta `scripts/`. Puedes crear las tablas manualmente ejecutando el siguiente comando en tu base de datos:
+   ```bash
+   mysql -u root -p ticketsdb < scripts/db.sql
+   ```
+   *(Asegúrate de reemplazar `root` y `ticketsdb` por tu usuario y base de datos configurados en el archivo `.env`)*
+
 ---
 
 # Parte 2: Manual de Usuario (Reglas de Negocio)
